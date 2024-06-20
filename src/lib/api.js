@@ -1,7 +1,9 @@
 import axios from "axios";
 
+//http://localhost:10000
+
 const api = axios.create({
-    baseURL: "http://localhost:3000",
+    baseURL: '/api',
     withCredentials: true,
     crossdomain: true,
 });
