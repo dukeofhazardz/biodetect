@@ -430,6 +430,10 @@ nav .link-styled {
   animation-delay: 13s;
 }
 
+.container:nth-child(15) {
+  animation-delay: 14s;
+}
+
 .text-box {
   padding: 20px 30px;
   background: linear-gradient(180deg, #944194, #390e56);
