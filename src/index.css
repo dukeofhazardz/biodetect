@@ -286,6 +286,7 @@ nav .link-styled {
   width: 100%;
   position: relative;
   z-index: 2;
+  pointer-events: none;
 }
 
 .first-plant .plant {
@@ -306,7 +307,8 @@ nav .link-styled {
   margin-top: -18rem;
   width: 100%;
   position: relative;
-  z-index: 3;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .second-plant .plant {
@@ -321,6 +323,7 @@ nav .link-styled {
   width: 100%;
   position: absolute;
   z-index: 3;
+  pointer-events: none;
 }
 
 .third-plant .plant {
@@ -554,7 +557,7 @@ nav .link-styled {
   transition: border-color 0.3s;
 }
 
-.sound-section.wrapper {
+.description-section.wrapper {
   width: 100%;
   color: #1d1d1f;
   background-color: #fbfbfd;
@@ -565,12 +568,12 @@ nav .link-styled {
   /*opacity: 0;*/
 }
 
-.sound-section .body {
+.description-section .body {
   max-width: 980px;
   margin: 0 auto;
 }
 
-.sound-section .content {
+.description-section .content {
   max-width: 490px;
   width: 100%;
   padding: 200px 0;
@@ -581,14 +584,14 @@ nav .link-styled {
   text-align: center;
 }
 
-.sound-section .title {
+.description-section .title {
   color: #1d1d1f;
   font-size: 17px;
   font-weight: 400;
   margin-bottom: 0;
 }
 
-.sound-section .text {
+.description-section .text {
   display: inline-block;
   color: transparent;
   background-image: linear-gradient(
@@ -607,12 +610,12 @@ nav .link-styled {
   margin-bottom: 18px;
 }
 
-.sound-section .description {
+.description-section .description {
   font-size: 21px;
   font-weight: 400;
 }
 
-.sound-section .links {
+.description-section .links {
   display: flex;
   justify-content: center;
   margin-top: 24px;
@@ -623,7 +626,7 @@ nav .link-styled {
   list-style: none;
 }
 
-.sound-section .button {
+.description-section .button {
   background: #0071e3;
   color: #fff;
   cursor: pointer;
@@ -639,7 +642,7 @@ nav .link-styled {
   border: none;
 }
 
-.sound-section .link {
+.description-section .link {
   text-decoration: none;
   color: #2997ff;
   font-size: 21px;
@@ -716,7 +719,7 @@ nav .link-styled {
   }
 
   .jumbotron-section.wrapper,
-  .sound-section.wrapper,
+  .description-section.wrapper,
   .display-section.wrapper {
     padding-left: 20px;
     padding-right: 20px;
@@ -724,13 +727,13 @@ nav .link-styled {
   }
 
   .jumbotron-section .description,
-  .sound-section .description,
+  .description-section .description,
   .display-section .description {
     font-size: 14px;
   }
 
   .jumbotron-section.wrapper,
-  .sound-section .content,
+  .description-section .content,
   .display-section.wrapper {
     padding-top: 20px;
   }
@@ -741,11 +744,11 @@ nav .link-styled {
     height: 100vh;
   }
 
-  .sound-section.wrapper {
+  .description-section.wrapper {
     height: 100vh;
   }
 
-  .sound-section .content {
+  .description-section .content {
     max-width: 100%;
   }
 }

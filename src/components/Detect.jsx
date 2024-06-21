@@ -49,7 +49,7 @@ const Detect = () => {
   };
 
   return (
-    <div className="display-section wrapper">
+    <div className="display-section wrapper" id="detect">
       <p className="text">Detect</p>
       <span className="description">
         Provide a clear and focused image of an animal, plant or insect for

@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="about-section wrapper">
+    <div className="about-section wrapper" id="about">
       <div className="content">
         <p className="text">About</p>
         <p className="title">Unveiling the Natural World</p>
