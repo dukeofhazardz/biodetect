@@ -82,7 +82,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 50px 0 30px 0;
+  padding: 50px 0 100px 0;
   box-sizing: border-box;
   /*opacity: 0;*/
   position: relative;
@@ -163,6 +163,7 @@ body::-webkit-scrollbar-thumb {
   max-width: 490px;
   width: 100%;
   padding: 50px 80px;
+  margin-left: 35rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -302,21 +303,21 @@ nav .link-styled {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: -25.5rem;
+  margin-top: -18rem;
   width: 100%;
   position: relative;
   z-index: 3;
 }
 
 .second-plant .plant {
-  max-width: 30rem;
+  max-width: 20rem;
 }
 
 .third-plant {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-top: -10rem;
+  justify-content: flex-start;
+  margin-top: -6rem;
   width: 100%;
   position: absolute;
   z-index: 3;
@@ -425,8 +426,6 @@ nav .link-styled {
 .container:nth-child(14) {
   animation-delay: 13s;
 }
-
-
 
 .text-box {
   padding: 20px 30px;

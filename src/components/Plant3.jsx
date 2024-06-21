@@ -1,5 +1,5 @@
 import React from "react";
-import Plant3 from "../assets/images/plant5.png";
+import Plant3 from "../assets/images/plant3.png";
 
 const ThirdPlant = () => {
   return (
