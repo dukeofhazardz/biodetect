@@ -212,7 +212,7 @@ nav.nav-wrapper {
   max-height: 44px;
   font-size: 17px;
   background-color: #000;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 10;
 }
@@ -288,7 +288,7 @@ nav .link-styled {
   width: 100%;
   position: relative;
   z-index: 3;
-  /*pointer-events: none;*/
+  pointer-events: none;
 }
 
 .first-plant .plant {
@@ -311,7 +311,7 @@ nav .link-styled {
   width: 100%;
   position: relative;
   z-index: 1;
-  /*pointer-events: none;*/
+  pointer-events: none;
 }
 
 .second-plant .plant {
@@ -326,7 +326,7 @@ nav .link-styled {
   width: 100%;
   position: absolute;
   z-index: 3;
-  /*pointer-events: none;*/
+  pointer-events: none;
 }
 
 .third-plant .plant {
