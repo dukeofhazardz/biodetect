@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import FirstPlant from "./components/Plant";
 import SecondPlant from "./components/Plant2";
 import ThirdPlant from "./components/Plant3";
+import WebgiViewer from "./components/WebgiViewer";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <ThirdPlant />
       <About />
       <Footer />
+      <WebgiViewer />
     </div>
   );
 }
