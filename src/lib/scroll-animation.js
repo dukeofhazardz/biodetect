@@ -12,7 +12,8 @@ export const scrollAnimation = (position, target, onUpdate) => {
             start: 'top 75%',
             end: 'top top',
             scrub: 2,
-            immediateRender: false
+            immediateRender: false,
+            ease: "power2.inOut"
         },
         onUpdate
     })
@@ -25,7 +26,8 @@ export const scrollAnimation = (position, target, onUpdate) => {
             start: 'top 75%',
             end: 'top top',
             scrub: 2,
-            immediateRender: false
+            immediateRender: false,
+            ease: "power2.inOut"
         },
     })
     .to(position, {
@@ -37,7 +39,8 @@ export const scrollAnimation = (position, target, onUpdate) => {
             start: 'top 75%',
             end: 'top top',
             scrub: 2,
-            immediateRender: false
+            immediateRender: false,
+            ease: "power2.inOut"
         },
         onUpdate
     })
@@ -48,6 +51,58 @@ export const scrollAnimation = (position, target, onUpdate) => {
         scrollTrigger: {
             trigger: '.description-section',
             start: 'top 75%',
+            end: 'top top',
+            scrub: 2,
+            immediateRender: false
+        },
+    })
+    .to(position, {
+        x: -0.2774669079,
+        y: 2.41,
+        z: 9.752114362,
+        scrollTrigger: {
+            trigger: '.display-section',
+            start: 'top 75%',
+            end: 'top top',
+            scrub: 2,
+            immediateRender: false,
+            ease: "power2.inOut"
+        },
+        onUpdate
+    })
+    .to(target, {
+        x: 0.00,
+        y: 0.00,
+        z: 0.00,
+        scrollTrigger: {
+            trigger: '.display-section',
+            start: 'top 75%',
+            end: 'top top',
+            scrub: 2,
+            immediateRender: false
+        },
+    })
+    .to(position, {
+        x: 1.8031021426,
+        y: -9.5813723357,
+        z: 2.671923614,
+        scrollTrigger: {
+            trigger: '.about-section',
+            start: 'top 85%',
+            end: 'top top',
+            scrub: 2,
+            immediateRender: false,
+            ease: "power2.inOut"
+        },
+        onUpdate
+    })
+    .to(target, {
+        x: 2.00,
+        y: 6.00,
+        z: -1.80,
+        scrollTrigger: {
+            trigger: '.about-section',
+            start: 'top 50%',
             end: 'top top',
             scrub: 2,
             immediateRender: false

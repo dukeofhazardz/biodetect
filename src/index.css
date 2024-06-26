@@ -152,7 +152,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  z-index: 1;
+  z-index: 0;
   /* opacity: 0; */
 }
 
