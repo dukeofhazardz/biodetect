@@ -56,24 +56,6 @@ body::-webkit-scrollbar-thumb {
   background: transparent;
 }
 
-#webgi-canvas-container .button {
-  background: #0071e3;
-  color: #fff;
-  cursor: pointer;
-  text-align: center;
-  white-space: nowrap;
-  font-size: 17px;
-  font-weight: 400;
-  min-width: 28px;
-  padding: 8px 16px;
-  border-radius: 980px;
-  position: absolute;
-  top: 30px;
-  border: none;
-  z-index: 1;
-  transition-duration: 0.3s;
-}
-
 .display-section.wrapper {
   margin-left: auto;
   margin-right: auto;
@@ -275,6 +257,7 @@ nav .link-styled {
   letter-spacing: -0.022em;
   position: relative;
   min-width: auto;
+  pointer-events: none;
 }
 
 .first-plant {
@@ -710,6 +693,11 @@ nav .link-styled {
 }
 
 /* Media Queries */
+@media screen and (max-width: 1024px) {
+  #webgi-canvas-container {
+    margin-top: -16rem;
+  }
+}
 
 @media screen and (max-width: 950px) {
   .jumbotron-section.wrapper {

@@ -1,9 +1,6 @@
 import React, {
   useRef,
-  useState,
   useCallback,
-  forwardRef,
-  useImperativeHandle,
   useEffect,
 } from "react";
 import {
@@ -17,7 +14,6 @@ import {
   GLTFAnimationPlugin,
   BloomPlugin,
   GammaCorrectionPlugin,
-  mobileAndTabletCheck,
 } from "webgi";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/src/ScrollTrigger";
@@ -27,14 +23,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 const WebgiViewer = () => {
   const canvasRef = useRef(null);
+  const isMobile = window.innerWidth < 768;
+  const isTablet =
+    (window.innerWidth >= 768 && window.innerWidth <= 1024) ||
+    /ipad|android(?!.*mobile)|tablet|playbook|silk/i.test(navigator.userAgent);
 
   const memoizedScrollAnimation = useCallback(
-    (position, target, onUpdate) => {
+    (position, target, onUpdate, viewer, isTablet) => {
       if (position && target && onUpdate) {
-        scrollAnimation(position, target, onUpdate);
+        scrollAnimation(position, target, onUpdate, viewer, isTablet);
       }
-    }, []
-  )
+    },
+    []
+  );
 
   const setupViewer = useCallback(async () => {
     const viewer = new ViewerApp({
@@ -53,17 +54,23 @@ const WebgiViewer = () => {
     await viewer.addPlugin(GammaCorrectionPlugin);
     await viewer.addPlugin(SSRPlugin);
     await viewer.addPlugin(SSAOPlugin);
-    await viewer.addPlugin(GLTFAnimationPlugin)
+    await viewer.addPlugin(GLTFAnimationPlugin);
     await viewer.addPlugin(BloomPlugin);
 
     viewer.renderer.refreshPipeline();
 
-    await assetManager.addFromPath("scene.glb");
+    const model = await assetManager.addFromPath("scene.glb");
+    console.log("Model loaded: ", model);
+
+    if (!model) {
+      console.error("Model not loaded.");
+      return;
+    }
 
     const gltfAnims = viewer.getPlugin(GLTFAnimationPlugin);
 
-    const resetOnEnd = true
-    await gltfAnims.playClip('Take 001', resetOnEnd)
+    const resetOnEnd = true;
+    await gltfAnims.playClip("Take 001", resetOnEnd);
 
     viewer.getPlugin(TonemapPlugin).config.clipBackground = true;
 
@@ -75,7 +82,7 @@ const WebgiViewer = () => {
     const onUpdate = () => {
       needsUpdate = true;
       viewer.setDirty();
-    }
+    };
 
     viewer.addEventListener("preFrame", () => {
       if (needsUpdate) {
@@ -83,12 +90,20 @@ const WebgiViewer = () => {
         needsUpdate = false;
       }
     });
-    memoizedScrollAnimation(position, target, onUpdate)
+    memoizedScrollAnimation(position, target, onUpdate, viewer, isTablet);
   }, []);
 
   useEffect(() => {
     setupViewer();
   }, []);
+
+  if (isMobile) {
+    return (
+      <div>
+        Sorry, 3D model is not available on mobile devices.
+      </div>
+    );
+  }
 
   return (
     <div id="webgi-canvas-container">
