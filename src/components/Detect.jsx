@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import api from "../lib/api";
+import textSelector from "../lib/text-selector";
 import loadingGif from "../assets/images/loading.gif";
 
 const Detect = () => {
@@ -8,6 +9,35 @@ const Detect = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
+  const [text, setText] = useState("");
+  const [isSpeaking, setIsSpeaking] = useState(false);
+
+  useEffect(() => {
+    // Cancel any ongoing speech synthesis when the component mounts
+    window.speechSynthesis.cancel();
+
+    // Cancel speech synthesis on unmount or reload
+    return () => {
+      window.speechSynthesis.cancel();
+    };
+  }, []);
+
+  const getAudio = async (e) => {
+    e.preventDefault();
+    if (isSpeaking) {
+      // Stop speaking
+      window.speechSynthesis.cancel();
+      setIsSpeaking(false);
+    } else {
+      // Start speaking
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.onend = () => {
+        setIsSpeaking(false);
+      };
+      window.speechSynthesis.speak(utterance);
+      setIsSpeaking(true);
+    }
+  };
 
   const handleInputChange = (event) => {
     const file = event.target.files[0];
@@ -41,6 +71,7 @@ const Detect = () => {
         },
       });
       setResult(response.data);
+      setText(textSelector(response.data));
     } catch (error) {
       setError("An error occurred while processing the image.");
     } finally {
@@ -86,6 +117,16 @@ const Detect = () => {
       <div className="image-preview">
         {imagePreview && <img src={imagePreview} alt="Selected Image" />}
       </div>
+
+      {result && !result.error && (
+        <div>
+          <form onSubmit={getAudio}>
+            <button type="submit" className="button">
+            {isSpeaking ? 'Stop' : 'Play'}
+            </button>
+          </form>
+        </div>
+      )}
 
       {result && !result.error && (
         <div className="results">
