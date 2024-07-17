@@ -868,7 +868,7 @@ nav .link-styled {
     left: 31px;
   }
   .container {
-    width: 100%;
+    width: 80%;
     padding-left: 80px;
     padding-right: 25px;
   }
@@ -882,5 +882,11 @@ nav .link-styled {
     border-right: 15px solid #944194;
     border-left: 0;
     left: -15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 70%;
   }
 }

@@ -38,6 +38,10 @@ const WebgiViewer = () => {
   );
 
   const setupViewer = useCallback(async () => {
+    if (isMobile) {
+      return; // Prevents the viewer from being initialized on mobile devices
+    }
+
     const viewer = new ViewerApp({
       canvas: canvasRef.current,
     });
