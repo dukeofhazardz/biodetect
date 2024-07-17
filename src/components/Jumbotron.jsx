@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import api from "../lib/api";
 
 const Jumbotron = () => {
-  return (
-    <div className='jumbotron-section wrapper'>
-      <h1 className='jumbotron-section title'>
-        BioDetect
-      </h1>
-    </div>
-  )
-}
+  useEffect(() => {
+    api.get("/").then(() => {
+      console.log("Ready");
+    });
+  }, []);
 
-export default Jumbotron
+  return (
+    <div className="jumbotron-section wrapper">
+      <h1 className="jumbotron-section title">BioDetect</h1>
+    </div>
+  );
+};
+
+export default Jumbotron;
