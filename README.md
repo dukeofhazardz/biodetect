@@ -1,4 +1,6 @@
-## BioDetect APP
+## BioDetect
+
+![BioDetect](https://github.com/user-attachments/assets/ef6baf5d-b9d1-407e-a76c-fd1bae188ea6)
 
 Welcome to the BioDetect, a web app that allows users to detect organisms based on images they provide. This API leverages cutting-edge technology to analyze images and provide detailed information about the detected organisms, including species, common name, scientific name, classification, physical characteristics, behavioral traits, habitat, geographic distribution, diet and feeding habits, reproduction and lifecycle, conservation status, interactions with other species, adaptations to the environment, threats and challenges, and conservation efforts and initiatives.
 
@@ -14,6 +16,7 @@ Welcome to the BioDetect, a web app that allows users to detect organisms based 
 6. [3D Model](#3d-model)
 
 <a name="introduction"></a>
+
 ### Introduction
 
 The BioDetect API utilizes React for the frontend interface and Python FastAPI for the backend. The core detection capabilities are powered by Google Gemini Pro Vision AI, enabling accurate detection and detailed analysis of living organisms from uploaded images.
@@ -23,20 +26,20 @@ The BioDetect API utilizes React for the frontend interface and Python FastAPI f
 
 <a name="home"></a>
 #### Home
-![home]()
+![home](https://github.com/user-attachments/assets/de49b1ff-d8fd-47ce-86a1-4e9763fa8b00)
+
 
 The general landing page of the BioDetect API provides users with an overview of the API's capabilities and instructions on how to use it. Here, users can find information about the API, its usage, and the technology powering it.
 
 <a name="detect"></a>
 #### Detect
-![detect]()
+![detect](https://github.com/user-attachments/assets/2c4171cc-4f4a-4d31-a7c7-da224afccf20)
+
 
 The Detect interface allows users to upload an image of an animal, insect, or plant for detection. Upon uploading an image, the API analyzes it and generates detailed information about the detected organism. The information is displayed in a carousel format, allowing users to click through each piece of information.
-![result]()
 
 <a name="about"></a>
 #### About
-![about]()
 
 The About section provides users with additional information about the BioDetect API, including its use cases, features, and development team. Users can learn more about the application's goals, objectives, and future plans.
 
@@ -64,3 +67,8 @@ The BioDetect API is developed and maintained by Nnaemeka Daniel John.
 ### 3D Model
 
 Butterfly 3D Model was created by [TPackard](https://sketchfab.com/TPackard).
+
+<a name="demo"></a>
+### Demo
+
+You can watch the demo video on [YouTube](https://youtu.be/5el3a5EfCx8?si=6qaJ7ZwLw5wzkkOB).
