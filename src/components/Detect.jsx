@@ -9,6 +9,7 @@ const Detect = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
+  const [errorInfo, setErrorInfo] = useState(null);
   const [text, setText] = useState("");
   const [isSpeaking, setIsSpeaking] = useState(false);
 
@@ -53,6 +54,7 @@ const Detect = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     setError(null);
+    setErrorInfo(null);
 
     if (!image) {
       setError("Please select an image.");
@@ -72,6 +74,9 @@ const Detect = () => {
       });
       setResult(response.data);
       setText(textSelector(response.data));
+      if (response.data.error) {
+        setErrorInfo(`${response.data.error}. ${response.data.next_steps}`);
+      }
     } catch (error) {
       setError("An error occurred while processing the image.");
     } finally {
@@ -103,6 +108,7 @@ const Detect = () => {
             />
           </div>
           {error && <div>{error}</div>}
+          {errorInfo && <div>{errorInfo}</div>}
           <button type="submit" className="button">
             {loading ? (
               <img className="loading-gif" src={loadingGif} alt="Loading..." />
