@@ -9,7 +9,7 @@ const About = () => {
         <span className="description">
           Biodetect is your all-in-one pocket naturalist, powered by
           cutting-edge technology. We leverage the Biodetect API, fueled by
-          Google's Gemini Pro Vision AI, to unlock detailed descriptions of the
+          Google's Gemini-1.5-Flash AI, to unlock detailed descriptions of the
           living world around you. <br />
           <br />
           <strong>Biodetect empowers you to:</strong>
@@ -28,7 +28,7 @@ const About = () => {
         </ul>
         <span className="description">
           Biodetect goes beyond basic identification. With the Biodetect API and
-          Google's advanced vision technology, you gain access to a wealth of
+          Google's advanced GenAI technology, you gain access to a wealth of
           information, right at your fingertips. So, next time you encounter an
           unfamiliar creature or plant, simply use Biodetect to unveil its
           secrets!
