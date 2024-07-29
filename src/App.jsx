@@ -8,11 +8,13 @@ import FirstPlant from "./components/Plant";
 import SecondPlant from "./components/Plant2";
 import ThirdPlant from "./components/Plant3";
 import WebgiViewer from "./components/WebgiViewer";
+import Loader from "./components/Loader";
 
 function App() {
 
   return (
     <div className="App">
+      <Loader />
       <Nav />
       <Jumbotron />
       <FirstPlant />
