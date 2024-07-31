@@ -21,7 +21,7 @@ import { scrollAnimation } from "../lib/scroll-animation";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const WebgiViewer = () => {
+const WebgiViewer = ({ onViewerReady }) => {
   const canvasRef = useRef(null);
   const isMobile = window.innerWidth < 768;
   const isTablet =
@@ -95,7 +95,8 @@ const WebgiViewer = () => {
       }
     });
     memoizedScrollAnimation(position, target, onUpdate, viewer, isTablet);
-  }, []);
+    onViewerReady();
+  }, [onViewerReady]);
 
   useEffect(() => {
     setupViewer();

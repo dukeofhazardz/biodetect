@@ -1,3 +1,4 @@
+import { useState, useCallback } from "react";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
 import Description from "./components/Description";
@@ -11,10 +12,15 @@ import WebgiViewer from "./components/WebgiViewer";
 import Loader from "./components/Loader";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  const handleViewerReady = useCallback(() => {
+    setLoading(false);
+  }, []);
 
   return (
     <div className="App">
-      <Loader />
+      {loading && <Loader />}
       <Nav />
       <Jumbotron />
       <FirstPlant />
@@ -24,7 +30,7 @@ function App() {
       <ThirdPlant />
       <About />
       <Footer />
-      <WebgiViewer />
+      <WebgiViewer onViewerReady={handleViewerReady} />
     </div>
   );
 }
